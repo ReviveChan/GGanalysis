@@ -1,6 +1,7 @@
 from matplotlib import font_manager
 from matplotlib.font_manager import FontProperties  # 字体管理器
 import matplotlib as mpl
+import os
 import os.path as osp
 import sys
 
@@ -13,6 +14,8 @@ __all__ = [
 font_path = None
 if sys.platform == 'win32':  # windows下
     font_path = 'C:/Windows/Fonts/'
+elif sys.platform == 'darwin':
+    font_path = os.path.expanduser('~') + '/Library/Fonts'
 else:  # Linux
     font_path = os.path.expanduser('~/.local/share/fonts/')
 
